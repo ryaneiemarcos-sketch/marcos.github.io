@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ClipForge • Edição Automática</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <p class="eyebrow">ClipForge</p>
+        <h1>Monte sua edição automática em minutos.</h1>
+        <p class="subtitle">
+          Suba seus clipes, organize a ordem e gere um rascunho de edição com
+          trilha e cortes inteligentes.
+        </p>
+        <div class="hero-actions">
+          <button class="primary" id="cta-upload">Adicionar clipes</button>
+          <button class="ghost" id="cta-demo">Ver demonstração</button>
+        </div>
+      </header>
+
+      <section class="card upload" id="upload-area">
+        <div class="upload-info">
+          <h2>Envie seus arquivos</h2>
+          <p>
+            Arraste e solte os vídeos ou selecione manualmente. Aceitamos MP4,
+            MOV e MKV.
+          </p>
+        </div>
+        <div class="upload-box">
+          <input
+            type="file"
+            id="clip-input"
+            accept="video/*"
+            multiple
+            hidden
+          />
+          <button class="secondary" id="select-files">Selecionar arquivos</button>
+          <p class="upload-hint">Solte aqui para enviar</p>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h3>Ordem dos clipes</h3>
+          <p class="muted">
+            Organize a sequência abaixo. Você pode definir notas para cada
+            trecho.
+          </p>
+          <ul class="clip-list" id="clip-list"></ul>
+          <div class="empty" id="empty-state">
+            <p>Adicione clipes para começar.</p>
+          </div>
+        </article>
+
+        <article class="card settings">
+          <h3>Configurações da edição</h3>
+          <div class="field">
+            <label for="style">Estilo</label>
+            <select id="style">
+              <option>Dinâmico</option>
+              <option>Cinemático</option>
+              <option>Reel rápido</option>
+              <option>Documental</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="tempo">BPM da trilha</label>
+            <input type="range" id="tempo" min="80" max="160" value="120" />
+            <span id="tempo-value">120 BPM</span>
+          </div>
+          <div class="field">
+            <label for="tone">Tom</label>
+            <select id="tone">
+              <option>Inspirador</option>
+              <option>Épico</option>
+              <option>Minimalista</option>
+              <option>Urbano</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="notes">Observações</label>
+            <textarea id="notes" rows="4" placeholder="Ex: destaque cenas com pessoas sorrindo"></textarea>
+          </div>
+          <button class="primary" id="generate">Gerar edição</button>
+          <p class="status" id="status">Carregue clipes para habilitar.</p>
+        </article>
+      </section>
+
+      <section class="card result" id="result">
+        <div>
+          <h2>Edição pronta para baixar</h2>
+          <p class="muted">
+            Seu rascunho foi gerado. Baixe o arquivo de briefing com os cortes e
+            abra no seu editor favorito.
+          </p>
+        </div>
+        <button class="secondary" id="download">Baixar briefing</button>
+      </section>
+
+      <footer class="footer">
+        <p>Feito para criadores que precisam editar rápido.</p>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
