@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ClipForge — seus clipes editados em minutos</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav">
+        <span class="logo">ClipForge</span>
+        <div class="nav-actions">
+          <button class="ghost">Entrar</button>
+          <button class="primary">Começar agora</button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <p class="eyebrow">Editor automático para criadores</p>
+          <h1>Suba seus clipes. A gente monta a edição pra você.</h1>
+          <p class="lead">
+            Organize seus vídeos, escolha o estilo da edição e receba um corte pronto para postar em
+            minutos.
+          </p>
+          <div class="hero-actions">
+            <button class="primary">Enviar clipes</button>
+            <button class="ghost">Ver demonstração</button>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <strong>+18k</strong>
+              <span>clipes editados</span>
+            </div>
+            <div>
+              <strong>3-5 min</strong>
+              <span>tempo médio</span>
+            </div>
+            <div>
+              <strong>1080p</strong>
+              <span>qualidade final</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3>Fluxo rápido</h3>
+          <ol>
+            <li>Arraste seus clipes.</li>
+            <li>Escolha o estilo.</li>
+            <li>Receba a edição pronta.</li>
+          </ol>
+          <button class="primary full">Criar nova edição</button>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <div class="section-title">
+          <h2>Monte sua edição</h2>
+          <p>Faça o upload e personalize o resultado final.</p>
+        </div>
+
+        <form class="editor-form" id="editor-form">
+          <label class="file-drop" for="clips">
+            <input id="clips" type="file" accept="video/*" multiple />
+            <div>
+              <strong>Arraste e solte seus vídeos</strong>
+              <span>ou clique para selecionar (MP4, MOV, AVI)</span>
+            </div>
+          </label>
+
+          <div class="form-grid">
+            <label>
+              Nome do projeto
+              <input type="text" name="project" placeholder="Ex: highlights da live" required />
+            </label>
+
+            <label>
+              Estilo da edição
+              <select name="style" required>
+                <option value="dinamico">Dinâmico para reels</option>
+                <option value="cinematico">Cinemático</option>
+                <option value="tutorial">Tutorial com cortes suaves</option>
+              </select>
+            </label>
+
+            <label>
+              Duração final
+              <select name="length">
+                <option value="30">Até 30 segundos</option>
+                <option value="60">Até 1 minuto</option>
+                <option value="180">Até 3 minutos</option>
+              </select>
+            </label>
+
+            <label>
+              Plataforma
+              <select name="platform">
+                <option value="tiktok">TikTok</option>
+                <option value="instagram">Instagram Reels</option>
+                <option value="youtube">YouTube Shorts</option>
+              </select>
+            </label>
+          </div>
+
+          <fieldset class="options">
+            <legend>Extras automáticos</legend>
+            <label>
+              <input type="checkbox" name="captions" checked />
+              Legendas automáticas
+            </label>
+            <label>
+              <input type="checkbox" name="music" checked />
+              Trilha sonora
+            </label>
+            <label>
+              <input type="checkbox" name="logo" />
+              Inserir logo no canto
+            </label>
+          </fieldset>
+
+          <label>
+            Observações
+            <textarea name="notes" rows="4" placeholder="Fale sobre o tom, cortes preferidos ou trechos importantes."></textarea>
+          </label>
+
+          <button class="primary full" type="submit">Gerar edição</button>
+        </form>
+
+        <div class="upload-preview">
+          <h3>Arquivos selecionados</h3>
+          <ul id="file-list">
+            <li>Nenhum clip carregado.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="results">
+        <div>
+          <h2>Prévia do resultado</h2>
+          <p>Assim que seus clipes são enviados, nosso editor monta uma prévia automática.</p>
+        </div>
+        <div class="result-cards">
+          <article>
+            <h4>Cortes inteligentes</h4>
+            <p>Selecionamos as melhores cenas com base no ritmo e na intensidade do áudio.</p>
+          </article>
+          <article>
+            <h4>Legenda automática</h4>
+            <p>Texto sincronizado para manter o público engajado em qualquer plataforma.</p>
+          </article>
+          <article>
+            <h4>Pronto para postar</h4>
+            <p>Exportação vertical em 1080x1920, com ajustes de cor e volume.</p>
+          </article>
+        </div>
+        <div class="status" id="status">
+          <span class="status-dot"></span>
+          <p>Pronto para enviar seus clipes e gerar a edição.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>ClipForge © 2024. Simplifique suas edições e foque no conteúdo.</p>
+      <button class="ghost">Falar com a equipe</button>
+    </footer>
+  </body>
+</html>
